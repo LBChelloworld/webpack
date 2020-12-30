@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="gb2312">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="icon" href="//assets.cjkt.com/img/favicon.ico">
+    <title>{{ name }}</title>
+    <script src="//player.polyv.net/script/player.js"></script>
+    <% if(htmlWebpackPlugin.options.isProd){ %>
+      <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
+      <script script src="https://cdn.bootcdn.net/ajax/libs/vue-lazyload/1.3.3/vue-lazyload.js"></script>
+    <% } %>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script type="text/javascript">
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          docEl.style.fontSize = 20 / 1.171875 * (clientWidth / 320) + 'px';
+        };
+      //当1rem = 20px;ui尺寸除以20，计算出来的大小就是多少rem
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+</html>
