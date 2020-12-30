@@ -28,8 +28,8 @@ import utils from '@/assets/js/util';
 Vue.prototype.$utils = utils
 
 // 导入公用组件
-import components from './components'
-Vue.use(components)
+// import components from './components'
+// Vue.use(components)
 
 // 导入自定义指令
 import directives from './directives'
